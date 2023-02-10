@@ -15,10 +15,22 @@ export class TasksComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-    //Like Promise
-    this.taskService.getTask().subscribe(task =>
-      (this.tasks=task)
+    //Like Promise, obtine los datos de json
+    this.taskService.getTask().subscribe((tasks) =>
+      {this.tasks=tasks}
     );
   }
+
+  deleteTask(task:Task) {
+    console.log("deelert!!!!");
+
+    this.taskService.deleteTask(task).subscribe( () => {
+      this.tasks = this.tasks.filter((t) => 
+         {return t.id !== task.id} //con filter quitamos al elemento de la lista instanciada que tenga el id seleccionado
+      )
+    })
+    
+  }
+  
 
 }

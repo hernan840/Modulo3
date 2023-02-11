@@ -1,8 +1,13 @@
-<div class="task">
+<div class="task" 
+     [ngClass]= "{reminder: task.reminder}"
+     (click)="onToggle(task)">
+     <!-- si reminder es true se colorea la barra izquierda -->
+     <!-- si se hace clic en la tarjeta se cambia el reminder dbclick -->
+
     <h3>
         {{task.text}}
         <fa-icon
-            [icon]="faTimes"
+            [icon] = "aTimes"
             [ngStyle]="{'color':'red'}"
             (click)="onDelete(task)"
         ></fa-icon>

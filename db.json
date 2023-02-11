@@ -10,12 +10,18 @@
       "id": 2,
       "text": "Hacer las compras para la cena",
       "day": "Agosto 5 a las 17:00",
-      "reminder": true
+      "reminder": false
     },
     {
       "id": 3,
-      "text": "Investigar sobre boostrap",
-      "day": "Agosto 5 a las 19:00",
+      "text": "terminar primer ",
+      "day": "Agosto 5 a las 12:00",
+      "reminder": true
+    },
+    {
+      "id": 4,
+      "text": "la cena",
+      "day": "Agosto 5 a las 17:00",
       "reminder": false
     }
   ]

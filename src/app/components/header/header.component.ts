@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { UiService } from 'src/app/service/ui.service';
+import { Router } from '@angular/router';
+
 
 //UiService se  usa para poder escuchar cunado se hace click en el boton
 //al otro componente
@@ -17,7 +19,10 @@ export class HeaderComponent implements OnInit{
   subscription?: Subscription;
 
 
-  constructor(private uiService:UiService){
+  constructor(
+    private uiService:UiService,
+    private router:Router
+    ){
     //para que cambie el btn al precionar 
     this.subscription = this.uiService.onToggle().subscribe((value) => 
               this.showAddTask = value)
@@ -29,6 +34,10 @@ export class HeaderComponent implements OnInit{
   toggelAddTask(){
     // console.log("toggelAddTask!!");
     this.uiService.toggleAddTask(); //para que cambie el valor del toggel
+  }
+
+  hasRoute(router: string){
+    return this.router.url === router
   }
 
 }

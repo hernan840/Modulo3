@@ -5,18 +5,18 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class UiService {
-  private showAddTask:boolean = false; //
+  private showAddTask: boolean = false; //
   private subject = new Subject<any>(); //tinne que ver cpn la posibilidad de escuchar eventos del template
 
 
   constructor() { }
 
-  toggleAddTask():void{
-    this.showAddTask = !this.showAddTask; 
+  toggleAddTask(): void {
+    this.showAddTask = !this.showAddTask;
     this.subject.next(this.showAddTask);
   }
 
-  onToggle(): Observable<any>{
+  onToggle(): Observable<any> {
     return this.subject.asObservable();
   }
 

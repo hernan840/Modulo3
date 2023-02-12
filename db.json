@@ -29,12 +29,6 @@
       "day": "tarde",
       "reminder": true,
       "id": 7
-    },
-    {
-      "text": "hoola",
-      "day": "mundo eeheje",
-      "reminder": true,
-      "id": 8
     }
   ]
 }

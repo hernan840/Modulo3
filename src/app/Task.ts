@@ -1,6 +1,6 @@
 /*manejar  la base de dato*/
 export interface Task{
-    id: number;
+    id?: number; // Cuando creamos podría no venir
     text: string;
     day: string;
     reminder: boolean;

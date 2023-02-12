@@ -34,12 +34,18 @@ export class TasksComponent implements OnInit {
   
 
   toggleReminder(task: Task) {
-    task.reminder= !task.reminder  //cambia solo en el front el valor del remider 
+    task.reminder= !task.reminder  //cambia el valor del remider  
    /*  console.log(task) */
    this.taskService.updateTaskReminder(task).subscribe();
    //pasamos al servicio para que actualice la bd y lo guarde
+  }
 
-   
+  addTask(task: Task) {
+    // console.log(task) controlamos que llega lo ingresado en el navegador
+    this.taskService.addTask(task).subscribe((task) => {
+      this.tasks.push(task);
+    })
+
   }
 
 }
